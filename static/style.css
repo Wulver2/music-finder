@@ -1,3 +1,24 @@
-* {
-    color: blue;
+html, body, .interface {
+    height: 100%;
+}
+.interface {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h1 {
+ 
+}
+
+button {
+    
+}
+
+.dark_mode {
+    background-color: black;
+    color: white;
 }

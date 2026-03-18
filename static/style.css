@@ -11,13 +11,16 @@ html, body, .interface {
 
 .block {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+}
+
+p.artist {
     border-style: solid;
     border-radius: 25px;
     border-color: black;
     background-color: skyblue;
-    margin: 25px;
+    padding: 20px;
 }
 
 h1 {

@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/style.css"> 
-    
+    <link rel="stylesheet" href="static/style.css">
+
 </head>
+
 <body>
     <button>Dark Mode</button>
     <a href="/">Return to Homepage</a>
 
     <h3>Similar artists to {{name}}</h3>
-    {% for artist in info%}
-        {%if artist != name%}
-        <div class="block">
-            {{artist}}
-        </div>
-        {% endif %}
-    {% endfor %}
+    <div class="block">
+        {% for artist in info%}
+            {%if artist != name%}
+                <p class="artist">{{artist}}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
 </body>
+
 </html>

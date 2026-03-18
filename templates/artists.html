@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css"> 
     
 </head>
 <body>
-    <p>{{info}}</p>
+    <button>Dark Mode</button>
+    <a href="/">Return to Homepage</a>
+
+    <h3>Similar artists to {{name}}</h3>
+    {% for artist in info%}
+        {%if artist != name%}
+        <div class="block">
+            {{artist}}
+        </div>
+        {% endif %}
+    {% endfor %}
 </body>
 </html>

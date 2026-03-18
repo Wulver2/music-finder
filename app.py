@@ -27,23 +27,22 @@ def info():
     info = get_artists_info(artist_name)
     tags = info["artists"][0]["tags"]
 
-    return render_template("artists.html", info=make_recommendation(tags))
+    return render_template("artists.html", info=make_recommendation(tags), name=artist_name)
 
 # Artists with similar genres to the initial artists will be returned and later
 # formatted to new page
 def make_recommendation(artist_info):
     # Instead of going through each tag that an artists has may only use the one with
-    # the highest count?
+    # the highest count? artists with too many tags slow down size since they make multiple
+    # requests
     new_artists = set()
 
     for tag in range(len(artist_info)):
         genre = artist_info[tag]["name"]
         new_artists_url = f"https://musicbrainz.org/ws/2/artist/?query=tag:\"{genre}\"&fmt=json"
-        print(new_artists_url)
         response = requests.get(new_artists_url, headers=headers)
         data = response.json()
 
-        # TODO: make sure inital artist is not included in set
         for artist_index in range(len(data["artists"])):
             artist = data["artists"][artist_index]["name"]
             if artist not in new_artists:

@@ -9,6 +9,16 @@ html, body, .interface {
     align-items: center;
 }
 
+.block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-style: solid;
+    border-radius: 25px;
+    border-color: black;
+    background-color: skyblue;
+    margin: 25px;
+}
 
 h1 {
  
